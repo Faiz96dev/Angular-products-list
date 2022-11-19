@@ -9,7 +9,7 @@
 
 <p *ngIf="loading" class="text-center text-lg">Loading...</p>
 
-<div *ngIf="productsService.products">
+<div class="flex justify-around flex-wrap mt-4" *ngIf="productsService.products">
   <app-product
     *ngFor="let product of productsService.products | filterProducts:term; let i = index"
     [product]="product"

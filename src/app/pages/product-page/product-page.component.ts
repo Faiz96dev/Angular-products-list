@@ -8,7 +8,7 @@ import {ModalService} from '../../services/modal.service'
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit {
-  title = 'angular app'
+  title = 'Product-list'
   // products: IProduct[] = []
   loading = false
   // products$: Observable<IProduct[]>

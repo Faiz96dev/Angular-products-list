@@ -1,15 +1,16 @@
-<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
-  <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2">
+<div class=" p-6 border rounded h-auto w-[200px] relative flex items-center flex-col ">
+  <!-- <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2"> -->
   <h2 class="mb-2 text-md text-center">{{ product.title }}</h2>
-  <p>Price: <span class="font-bold">{{ product.price | currency:'RUB' }}</span></p>
-
+  <p class="mt-2 mb-2">Price: <span class="font-bold">{{ product.price | currency:'USD' }}</span></p>
+  <div (click)="deleteProduct(product._id ? product._id : '')" class="absolute bg-gray-300 top-[-5px] flex cursor-pointer justify-center align-center text-sm h-[20px] w-[20px] rounded-lg right-[-5px]">X</div>
   <button
     class="border py-2 px-4 rounded"
     [ngClass]="{
-      'bg-yellow-400': !details,
-      'bg-blue-400': details
+      'bg-gray-500': !details,
+      'bg-gray-300': details
     }"
-    (click)="details = !details"
+    (mouseenter)="details = true"
+    (mouseleave)="details = false"
   >
     {{ details ? 'Hide' : 'Show' }} Details
   </button>

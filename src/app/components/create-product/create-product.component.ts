@@ -21,11 +21,36 @@ export class CreateProductComponent implements OnInit {
     title: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(6)
-    ])
+    ]),
+    price: new FormControl<number>(0, [
+      Validators.required,
+    ]),
+    description: new FormControl<string>('', [
+      Validators.required,
+      Validators.minLength(6)
+    ]),
+    category: new FormControl<string>('', [
+      Validators.required,
+    ]),
+    rating: new FormControl<number>(0, [
+      Validators.required,
+    ]),
+
+    
   })
 
   get title() {
     return this.form.controls.title as FormControl
+  }
+  get price() {
+    return this.form.controls.price as FormControl
+  }
+  get description() {
+    return this.form.controls.description as FormControl
+  }
+
+  get rating() {
+    return this.form.controls.rating as FormControl
   }
 
   ngOnInit(): void {
@@ -35,10 +60,10 @@ export class CreateProductComponent implements OnInit {
     this.productService.create({
       title: this.form.value.title as string,
       price: this.form.value.price as number,
-      description: this.form.value.description as string,
-      // image: this.form.value.title as string,
-      category: this.form.value.category as string,
       rating: this.form.value.rating as number,
+      description: this.form.value.description as string,
+      category: this.form.value.category as string,
+      image: this.form.value.title as string,
     }).subscribe(() => {
       this.modalService.close()
     })

@@ -33,10 +33,22 @@ export class ProductsService {
   create(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>('http://localhost:3000/product', product)
       .pipe(
-        tap(prod => this.products.push(prod))
+        // @ts-ignore
+        tap(prod => this.products.push(prod.newProduct))
       )
   }
 
+  delete(id: string): void {
+    this.http.delete(`http://localhost:3000/product/${id}`)
+    .subscribe({
+      next: data => {
+        this.products = this.products.filter(p => p._id !== id)
+      },
+      error: error => {
+          console.error('There was an error!', error);
+      }
+  });
+  }
 
   private errorHandler(error: HttpErrorResponse) {
     this.errorService.handle(error.message)
