@@ -1,37 +1,26 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <input
-    type="text"
-    class="border w-full py-2 px-4 mb-2"
-    placeholder="Product name"
-    formControlName="title"
-appFocus
+  <label for="small-input" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+  <input type="text"
+  formControlName="title" id="small-input" class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
-  >
-  <input
-  type="text"
-  class="border w-full py-2 px-4 mb-2"
-  placeholder="Product description"
-  formControlName="description"
->
-<input
-type="number"
-class="border w-full py-2 px-4 mb-2"
-placeholder="Product Price"
-formControlName="price"
->
 
-<input
-type="category"
-class="border w-full py-2 px-4 mb-2"
-placeholder="Product Category"
-formControlName="category"
->
-<input
-type="number"
-class="border w-full py-2 px-4 mb-2"
-placeholder="Product Rating"
-formControlName="rating"
->
+  <label for="small-input" class="block mb-1 mt-3 text-sm font-medium text-gray-900 dark:text-white">Product description</label>
+  <input type="text" 
+  formControlName="description"  id="small-input" class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+  <label for="small-input" class="block mb-1 mt-3 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+  <input type="number" 
+  formControlName="price"  id="small-input" class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+  <label for="small-input" class="block mb-1 mt-3 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+  <input type="text" 
+  formControlName="category"  id="small-input" class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  
+
+  <label for="small-input" class="block mb-1 mt-3 text-sm font-medium text-gray-900 dark:text-white">Rating</label>
+  <input type="number" 
+formControlName="rating" max="5" min="0" id="small-input" class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
 
 
   <p
@@ -41,6 +30,6 @@ formControlName="rating"
 
   <button
     type="submit"
-    class="py-2 px-4 bg-blue-600 text-white"
+    class="py-2 px-4 mt-3 rounded-md bg-blue-600 text-gray-200"
   >Create</button>
 </form>
